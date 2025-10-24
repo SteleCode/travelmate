@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>TravelMate — Про нас</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body class="page">
+    <header class="header">
+      <div class="header__container">
+        <div class="header__logo">TravelMate</div>
+        <nav class="header__nav">
+          <a href="index.html" class="header__link">Головна</a>
+          <a href="destinations.html" class="header__link">Напрямки</a>
+          <a href="about.html" class="header__link header__link--active"
+            >Про нас</a
+          >
+          <a href="contacts.html" class="header__link">Контакти</a>
+        </nav>
+        <!-- <div class="header__search-block">
+          <input
+            id="searchInput"
+            class="header__search"
+            type="text"
+            placeholder="Пошук..."
+          />
+          <button class="header__btn" onclick="searchText()">🔍</button>
+        </div> -->
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="hero hero--small">
+        <div class="hero__content">
+          <h1 class="hero__title">Про TravelMate</h1>
+          <p class="hero__subtitle">
+            Ми допомагаємо мандрівникам планувати прості та цікаві поїздки
+          </p>
+        </div>
+      </section>
+
+      <section class="about">
+        <div class="about__container">
+          <p class="about__text">
+            TravelMate створено командою мандрівників і розробників, щоб зробити
+            планування подорожей швидким і приємним. Ми збираємо корисні поради,
+            підказки щодо транспорту, бюджетні рекомендації та кураторські
+            маршрути.
+          </p>
+
+          <h2 class="about__subtitle">Наша місія</h2>
+          <p
+            style="
+              max-width: 800px;
+              margin: 0 auto 20px;
+              text-align: center;
+              color: #555;
+            "
+          >
+            Допомагати людям відкривати світ без зайвого стресу: зручні
+            інструменти, персоналізовані пропозиції та чесні рекомендації.
+          </p>
+
+          <div class="about__grid">
+            <article class="about-card">
+              <h3 class="about-card__title">Прозорість</h3>
+              <p class="about-card__text">
+                Чесні відгуки і поради, без прихованих комісій.
+              </p>
+            </article>
+
+            <article class="about-card">
+              <h3 class="about-card__title">Локальні партнери</h3>
+              <p class="about-card__text">
+                Ми співпрацюємо з місцевими гідами та сервісами для кращого
+                досвіду.
+              </p>
+            </article>
+
+            <article class="about-card">
+              <h3 class="about-card__title">Підтримка</h3>
+              <p class="about-card__text">
+                Команда підтримки відповідає швидко та допомагає з
+                нестандартними запитами.
+              </p>
+            </article>
+
+            <article class="about-card">
+              <h3 class="about-card__title">Екологія</h3>
+              <p class="about-card__text">
+                Заохочуємо відповідальний туризм та екологічні маршрути.
+              </p>
+            </article>
+
+            <article class="about-card">
+              <h3 class="about-card__title">Пакети для різних бюджетів</h3>
+              <p class="about-card__text">
+                Гнучкі пакети: економні, стандартні та преміум — з орієнтовним
+                бюджетом і рекомендованими опціями розміщення.
+              </p>
+            </article>
+
+            <article class="about-card">
+              <h3 class="about-card__title">Гарантія якості</h3>
+              <p class="about-card__text">
+                Ми перевіряємо постачальників та екскурсії, надаємо поради щодо
+                страхування та маємо прозору політику повернень.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div
+        style="
+          max-width: 1100px;
+          margin: 0 auto;
+          padding: 20px 16px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          gap: 24px;
+          color: #fff;
+        "
+      >
+        <!-- Блок 1: Навігація -->
+        <div style="flex: 1 1 200px">
+          <h4 style="margin-bottom: 8px; font-size: 1.05rem">Навігація</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.6">
+            <li>
+              <a href="index.html" style="color: #fff; text-decoration: none"
+                >Головна</a
+              >
+            </li>
+            <li>
+              <a
+                href="destinations.html"
+                style="color: #fff; text-decoration: none"
+                >Напрямки</a
+              >
+            </li>
+            <li>
+              <a href="about.html" style="color: #fff; text-decoration: none"
+                >Про нас</a
+              >
+            </li>
+            <li>
+              <a href="contacts.html" style="color: #fff; text-decoration: none"
+                >Контакти</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Блок 2: Контакти -->
+        <div style="flex: 1 1 200px">
+          <h4 style="margin-bottom: 8px; font-size: 1.05rem">Контакти</h4>
+          <p style="margin: 0; line-height: 1.6">
+            Email:
+            <a href="mailto:info@travelmate.example" style="color: #fff"
+              >info@travelmate.example</a
+            ><br />
+            Телефон: +38 (067) 123-57-46<br />
+            Адреса: вул. Подорожня, 10, Київ, Україна
+          </p>
+        </div>
+
+        <!-- Блок 4: Місія -->
+        <div style="flex: 1 1 300px">
+          <h4 style="margin-bottom: 8px; font-size: 1.05rem">Наша місія</h4>
+          <p style="margin: 0; line-height: 1.6">
+            TravelMate прагне зробити подорожі доступними, зручними та
+            натхненними. Ми допомагаємо планувати маршрути, бронювати тури та
+            відкривати нові горизонти.
+          </p>
+        </div>
+      </div>
+
+      <div
+        style="
+          text-align: center;
+          padding: 12px;
+          color: #ccc;
+          font-size: 0.9rem;
+          border-top: 1px solid rgba(255, 255, 255, 0.2);
+        "
+      >
+        © 2025 TravelMate. Всі права захищено.
+      </div>
+    </footer>
+  </body>
+</html>

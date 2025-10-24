@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>TravelMate — Тур</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+
+    <style>
+      /* Стилі для вертикальної форми */
+      #booking-form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 18px;
+        max-width: 560px;
+      }
+
+      #booking-form h3 {
+        margin: 0 0 4px;
+        font-size: 1.1rem;
+        color: #2c3e50;
+      }
+
+      #booking-form label {
+        font-weight: 600;
+        margin-bottom: 4px;
+        color: #333;
+      }
+
+      #booking-form input[type="text"],
+      #booking-form input[type="email"],
+      #booking-form input[type="number"],
+      #booking-form textarea {
+        width: 100%;
+        padding: 10px 12px;
+        border-radius: 8px;
+        border: 1px solid #ccd3dc;
+        font-size: 1rem;
+        box-sizing: border-box;
+      }
+
+      #booking-form textarea {
+        min-height: 100px;
+        resize: vertical;
+      }
+
+      #booking-form button[type="submit"] {
+        padding: 10px 14px;
+        border-radius: 8px;
+        border: none;
+        background: #2ecc71;
+        color: #fff;
+        cursor: pointer;
+        font-weight: 600;
+        align-self: flex-start;
+      }
+
+      #booking-message {
+        font-weight: 600;
+        margin-top: 6px;
+      }
+    </style>
+  </head>
+  <body class="page">
+    <header class="header">
+      <div class="header__container">
+        <div class="header__logo">TravelMate</div>
+        <nav class="header__nav">
+          <a href="index.html" class="header__link">Головна</a>
+          <a href="destinations.html" class="header__link">Напрямки</a>
+          <a href="about.html" class="header__link">Про нас</a>
+          <a href="contacts.html" class="header__link">Контакти</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="hero hero--small">
+        <div class="hero__content">
+          <h1 id="tour-title" class="hero__title">Деталі туру</h1>
+        </div>
+      </section>
+
+      <section style="max-width: 920px; margin: 24px auto; padding: 0 20px">
+        <div id="tour-card" class="card">
+          <img id="tour-image" class="card__image" src="" alt="Тур" />
+          <div class="card__body">
+            <h2 id="tour-name" class="card__title"></h2>
+            <p id="tour-desc" class="card__text"></p>
+
+            <p style="margin-top: 12px">
+              <strong>Ціна:</strong> <span id="tour-price"></span>
+            </p>
+            <p><strong>Вільних місць:</strong> <span id="tour-seats"></span></p>
+
+            <!-- Класична бронь -->
+            <div id="book-block" style="display: block; margin-top: 14px">
+              <label for="book-qty">Кількість місць:</label>
+              <input
+                id="book-qty"
+                type="number"
+                value="1"
+                min="1"
+                max="5"
+                style="
+                  width: 80px;
+                  padding: 6px;
+                  border-radius: 4px;
+                  border: 1px solid #ccc;
+                  margin-left: 8px;
+                "
+              />
+              <button
+                id="book-btn"
+                class="contact__btn"
+                style="margin-left: 12px"
+              >
+                Забронювати
+              </button>
+              <p
+                id="book-message"
+                style="
+                  margin-left: 12px;
+                  display: inline-block;
+                  font-weight: 600;
+                "
+              ></p>
+            </div>
+
+            <!-- Форма підтвердження (режим book) -->
+            <form
+              id="booking-form"
+              style="display: none"
+              onsubmit="return handleBookingForm(event)"
+            >
+              <h3>Підтвердити бронювання</h3>
+
+              <label for="booking-name">Ім'я</label>
+              <input
+                id="booking-name"
+                type="text"
+                placeholder="Ваше ім'я"
+                required
+              />
+
+              <label for="booking-email">Email</label>
+              <input
+                id="booking-email"
+                type="email"
+                placeholder="name@example.com"
+                required
+              />
+
+              <label for="booking-qty">Кількість місць</label>
+              <input
+                id="booking-qty"
+                type="number"
+                min="1"
+                max="5"
+                value="1"
+                required
+              />
+
+              <label for="booking-note">Додаткове повідомлення</label>
+              <textarea
+                id="booking-note"
+                placeholder="Ваші побажання (необов'язково)"
+              ></textarea>
+
+              <button type="submit">Підтвердити бронювання</button>
+              <p id="booking-message"></p>
+            </form>
+
+            <p style="margin-top: 14px; color: #666; font-size: 0.95rem">
+              Після бронювання кількість вільних місць оновиться на всіх
+              сторінках (збереження в браузері).
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div
+        style="
+          max-width: 1100px;
+          margin: 0 auto;
+          padding: 20px 16px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          gap: 24px;
+          color: #fff;
+        "
+      >
+        <!-- Блок 1: Навігація -->
+        <div style="flex: 1 1 200px">
+          <h4 style="margin-bottom: 8px; font-size: 1.05rem">Навігація</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.6">
+            <li>
+              <a href="index.html" style="color: #fff; text-decoration: none"
+                >Головна</a
+              >
+            </li>
+            <li>
+              <a
+                href="destinations.html"
+                style="color: #fff; text-decoration: none"
+                >Напрямки</a
+              >
+            </li>
+            <li>
+              <a href="about.html" style="color: #fff; text-decoration: none"
+                >Про нас</a
+              >
+            </li>
+            <li>
+              <a href="contacts.html" style="color: #fff; text-decoration: none"
+                >Контакти</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Блок 2: Контакти -->
+        <div style="flex: 1 1 200px">
+          <h4 style="margin-bottom: 8px; font-size: 1.05rem">Контакти</h4>
+          <p style="margin: 0; line-height: 1.6">
+            Email:
+            <a href="mailto:info@travelmate.example" style="color: #fff"
+              >info@travelmate.example</a
+            ><br />
+            Телефон: +38 (067) 123-57-46<br />
+            Адреса: вул. Подорожня, 10, Київ, Україна
+          </p>
+        </div>
+
+        <!-- Блок 4: Місія -->
+        <div style="flex: 1 1 300px">
+          <h4 style="margin-bottom: 8px; font-size: 1.05rem">Наша місія</h4>
+          <p style="margin: 0; line-height: 1.6">
+            TravelMate прагне зробити подорожі доступними, зручними та
+            натхненними. Ми допомагаємо планувати маршрути, бронювати тури та
+            відкривати нові горизонти.
+          </p>
+        </div>
+      </div>
+
+      <div
+        style="
+          text-align: center;
+          padding: 12px;
+          color: #ccc;
+          font-size: 0.9rem;
+          border-top: 1px solid rgba(255, 255, 255, 0.2);
+        "
+      >
+        © 2025 TravelMate. Всі права захищено.
+      </div>
+    </footer>
+  </body>
+</html>

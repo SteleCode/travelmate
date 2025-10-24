@@ -1,0 +1,1241 @@
+/* ===== Скидання стилів ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Базові стилі ===== */
+html,
+body {
+  height: 100%; /* важливо для "липкого" футера */
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+  display: flex;
+  flex-direction: column; /* вертикальний flex */
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #e67e22;
+}
+
+/* ===== Header ===== */
+.header {
+  background: linear-gradient(90deg, #2c3e50, #34495e);
+  color: #fff;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.header__container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.header__logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.header__nav {
+  display: flex;
+  gap: 20px;
+}
+
+.header__link {
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.header__link:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.header__link--active {
+  border-bottom: 2px solid #e67e22;
+}
+
+.header__search-block {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.header__search {
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.header__btn {
+  padding: 6px 12px;
+  cursor: pointer;
+  background-color: #e67e22;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  transition: background 0.3s ease;
+}
+
+.header__btn:hover {
+  background-color: #cf6d17;
+}
+
+/* ===== Main ===== */
+.main {
+  flex: 1; /* займає весь вільний простір */
+  padding: 20px;
+}
+
+/* ===== Hero ===== */
+.hero {
+  background: url("https://picsum.photos/1200/400?travel") center/cover
+    no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: auto;
+}
+
+.hero__title {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+
+.hero__subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+.hero__btn {
+  padding: 12px 25px;
+  background: #e67e22;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.hero__btn:hover {
+  background: #cf6d17;
+  transform: translateY(-2px);
+}
+
+/* ===== Карточки напрямків ===== */
+.destinations__grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(260px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card__image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card__body {
+  padding: 15px;
+}
+
+.card__title {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: #2c3e50;
+}
+
+.card__text {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* ===== About ===== */
+.about__container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.about__text {
+  margin-bottom: 30px;
+  font-size: 1.1rem;
+}
+
+.about__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.about-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-5px);
+}
+
+.about-card__title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #e67e22;
+}
+
+.about-card__text {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* ===== Contact ===== */
+.contact__container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact__input,
+.contact__textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact__input:focus,
+.contact__textarea:focus {
+  border-color: #e67e22;
+  box-shadow: 0 0 5px rgba(230, 126, 34, 0.5);
+  outline: none;
+}
+
+.contact__btn {
+  padding: 12px;
+  background-color: #e67e22;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.contact__btn:hover {
+  background-color: #cf6d17;
+  transform: translateY(-2px);
+}
+
+.contact__message {
+  text-align: center;
+  margin-top: 15px;
+  font-weight: bold;
+  color: green;
+}
+
+/* ===== Footer ===== */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #2c3e50;
+  color: #fff;
+  font-size: 0.9rem;
+  margin-top: auto; /* футер завжди внизу */
+}
+
+/* ===== Скидання стилів ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Базові стилі ===== */
+html,
+body {
+  height: 100%;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s;
+}
+a:hover {
+  color: #e67e22;
+}
+
+/* ===== Header ===== */
+.header {
+  background: linear-gradient(90deg, #2c3e50, #34495e);
+  color: #fff;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.header__container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.header__logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.header__nav {
+  display: flex;
+  gap: 20px;
+}
+.header__link {
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+.header__link:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+.header__link--active {
+  border-bottom: 2px solid #e67e22;
+}
+
+.header__search-block {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.header__search {
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+.header__btn {
+  padding: 6px 12px;
+  cursor: pointer;
+  background-color: #e67e22;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  transition: background 0.3s;
+}
+.header__btn:hover {
+  background-color: #cf6d17;
+}
+
+/* ===== Main ===== */
+.main {
+  flex: 1;
+  padding: 20px;
+}
+
+/* ===== Hero ===== */
+.hero {
+  background: url("https://picsum.photos/1200/400?travel") center/cover
+    no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+.hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: auto;
+}
+.hero__title {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+.hero__subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+.hero__btn {
+  padding: 12px 25px;
+  background: #e67e22;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+.hero__btn:hover {
+  background: #cf6d17;
+  transform: translateY(-2px);
+}
+
+/* ===== Cards / Grid ===== */
+.destinations__grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(260px, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+.card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+.card__image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.card__body {
+  padding: 15px;
+}
+.card__title {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+.card__text {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* ===== About ===== */
+.about__container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+.about-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+}
+.about-card__title {
+  color: #e67e22;
+  margin-bottom: 8px;
+}
+
+/* ===== Contact ===== */
+.contact__container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+.contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.contact__input,
+.contact__textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  transition: border 0.25s, box-shadow 0.25s;
+}
+.contact__input:focus,
+.contact__textarea:focus {
+  border-color: #e67e22;
+  box-shadow: 0 0 6px rgba(230, 126, 34, 0.35);
+  outline: none;
+}
+.contact__btn {
+  padding: 12px;
+  background-color: #e67e22;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.contact__btn:hover {
+  background: #cf6d17;
+  transform: translateY(-2px);
+  transition: transform 0.15s;
+}
+.contact__message {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* ===== Destination page specifics ===== */
+.highlight {
+  background: yellow;
+  font-weight: 600;
+}
+
+/* ===== Footer ===== */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #2c3e50;
+  color: #fff;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+/* ===== Скидання стилів ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Базові стилі ===== */
+html,
+body {
+  height: 100%;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s;
+}
+a:hover {
+  color: #e67e22;
+}
+
+/* ===== Header ===== */
+.header {
+  background: linear-gradient(90deg, #2c3e50, #34495e);
+  color: #fff;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.header__container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.header__logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.header__nav {
+  display: flex;
+  gap: 20px;
+}
+.header__link {
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+.header__link:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+.header__link--active {
+  border-bottom: 2px solid #e67e22;
+}
+
+.header__search-block {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.header__search {
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 200px;
+}
+.header__btn {
+  padding: 6px 12px;
+  cursor: pointer;
+  background-color: #e67e22;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  transition: background 0.3s;
+}
+.header__btn:hover {
+  background-color: #cf6d17;
+}
+
+/* ===== Main ===== */
+.main {
+  flex: 1;
+  padding: 20px;
+}
+
+/* ===== Hero ===== */
+.hero {
+  background: url("https://picsum.photos/1200/400?travel") center/cover
+    no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+.hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  margin: auto;
+}
+.hero__title {
+  font-size: 2.2rem;
+  margin-bottom: 12px;
+}
+.hero__subtitle {
+  font-size: 1rem;
+  margin-bottom: 18px;
+}
+.hero__btn {
+  padding: 10px 20px;
+  background: #e67e22;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+.hero__btn:hover {
+  background: #cf6d17;
+  transform: translateY(-2px);
+}
+
+/* ===== Grid: максимум 2 картки в ряд ===== */
+.destinations__grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 24px;
+  margin-top: 40px;
+  max-width: 1080px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* мобільно 1 в ряд */
+@media (max-width: 640px) {
+  .destinations__grid {
+    grid-template-columns: 1fr;
+    padding: 0 12px;
+  }
+  .header__container {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* ===== Cards ===== */
+.card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+.card__image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+.card__body {
+  padding: 16px;
+}
+.card__title {
+  font-size: 1.15rem;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+.card__text {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* Контроли у картці */
+.card-controls {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.tour-select {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+.view-btn {
+  padding: 8px 12px;
+  background: #e67e22;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.view-btn:hover {
+  background: #cf6d17;
+  transform: translateY(-2px);
+}
+.confirm-btn {
+  padding: 8px 12px;
+  background: #2ecc71;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.confirm-btn:hover {
+  background: #27b765;
+  transform: translateY(-2px);
+}
+
+/* ===== About ===== */
+.about__container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+/* Контейнер для селектора і кнопок */
+.card-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+/* Селектор туру */
+.tour-select {
+  flex: 1 1 auto;
+  min-width: 200px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #fff;
+  font-size: 0.95rem;
+}
+
+/* Контейнер для кнопок */
+.card-controls__buttons {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* Кнопки */
+
+.confirm-btn {
+  padding: 8px 14px;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+
+/* .view-btn {
+  background: #e67e22;
+  color: #fff;
+} */
+.view-btn:hover {
+  background: #cf6d17;
+  transform: translateY(-2px);
+}
+
+.confirm-btn {
+  background: #2ecc71;
+  color: #fff;
+}
+.confirm-btn:hover {
+  background: #27b765;
+  transform: translateY(-2px);
+}
+
+/* ===== Reset ===== */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ===== Base ===== */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f6f9;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+.main {
+  flex: 1;
+  padding: 20px;
+}
+
+/* ===== Header ===== */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: linear-gradient(90deg, #2c3e50, #34495e);
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+.header__container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 20px;
+}
+.header__nav {
+  display: flex;
+  gap: 16px;
+}
+.header__link {
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+.header__link--active {
+  border-bottom: 2px solid #e67e22;
+}
+.header__link:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+.header__search-block {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.header__search {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 200px;
+}
+.header__btn {
+  padding: 6px 12px;
+  background: #e67e22;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.header__btn:hover {
+  background: #cf6d17;
+}
+
+/* ===== Hero ===== */
+.hero {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: url("https://picsum.photos/1200/400?travel") center/cover
+    no-repeat;
+  margin-top: 16px;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+.hero__content {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+}
+.hero__title {
+  font-size: 2.2rem;
+  margin: 0 0 12px;
+}
+.hero__subtitle {
+  font-size: 1rem;
+  margin: 0 0 18px;
+}
+.hero__btn {
+  padding: 10px 18px;
+  border-radius: 6px;
+  border: none;
+  background: #e67e22;
+  color: #fff;
+  cursor: pointer;
+}
+.hero__btn:hover {
+  background: #cf6d17;
+}
+
+/* ===== Grid: максимум 2 картки в ряд ===== */
+.destinations__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 12px;
+}
+
+/* 1 в ряд на вузьких екранах */
+@media (max-width: 640px) {
+  .destinations__grid {
+    grid-template-columns: 1fr;
+  }
+  .header__container {
+    flex-direction: column;
+  }
+}
+
+/* ===== Card ===== */
+.card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+.card__image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+.card__body {
+  padding: 16px;
+}
+.card__title {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin-bottom: 8px;
+}
+.card__text {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* ===== Controls: селектор ліворуч, кнопки праворуч ===== */
+.card-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+/* Dropdown — гнучкий, не ламає компоновку */
+.tour-select {
+  flex: 1 1 280px; /* мін ширина, потім розтягується */
+  min-width: 240px;
+  max-width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 0.95rem;
+}
+
+/* Кнопки — праворуч пакетом */
+.card-controls__buttons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+/* View / Confirm кнопки */
+.view-btn,
+.confirm-btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.12s ease;
+  white-space: nowrap;
+}
+/* .view-btn {
+  background: #e67e22;
+  color: #fff;
+} */
+.view-btn:hover {
+  background: #cf6d17;
+  transform: translateY(-2px);
+}
+
+.confirm-btn {
+  background: #2ecc71;
+  color: #fff;
+}
+.confirm-btn:hover {
+  background: #27b765;
+  transform: translateY(-2px);
+}
+
+/* Інфо під контролами */
+.card-info {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* ===== Forms ===== */
+.contact__input,
+.contact__textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+.contact__input:focus,
+.contact__textarea:focus {
+  border-color: #e67e22;
+  box-shadow: 0 0 6px rgba(230, 126, 34, 0.35);
+  outline: none;
+}
+.contact__btn {
+  padding: 10px 14px;
+  background: #e67e22;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ===== Utility ===== */
+.highlight {
+  background: yellow;
+  font-weight: 600;
+}
+
+/* ===== Footer ===== */
+.footer {
+  margin-top: auto;
+  background: #2c3e50;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+
+/* ===== Contact / Booking form ===== */
+.contact__input,
+.contact__textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  transition: border 0.25s, box-shadow 0.25s;
+}
+.contact__input:focus,
+.contact__textarea:focus {
+  border-color: #e67e22;
+  box-shadow: 0 0 6px rgba(230, 126, 34, 0.35);
+  outline: none;
+}
+.contact__btn {
+  padding: 10px 14px;
+  background-color: #e67e22;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* ===== Highlight & Footer ===== */
+.highlight {
+  background: yellow;
+  font-weight: 600;
+}
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #2c3e50;
+  color: #fff;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+/* ===== Адаптивність ===== */
+@media (max-width: 768px) {
+  .header__nav {
+    flex-basis: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .header__nav {
+    flex-basis: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  .hero__title {
+    font-size: 2rem;
+  }
+
+  .hero__title {
+    font-size: 2rem;
+  }
+
+  .hero__subtitle {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .header__container {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header__container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .hero {
+    padding: 60px 15px;
+  }
+
+  .header__search-block {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero {
+    padding: 60px 15px;
+  }
+}

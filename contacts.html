@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TravelMate — Контакти</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body class="page">
+  <header class="header">
+    <div class="header__container">
+      <div class="header__logo">TravelMate</div>
+      <nav class="header__nav">
+        <a href="index.html" class="header__link">Головна</a>
+        <a href="destinations.html" class="header__link">Напрямки</a>
+        <a href="about.html" class="header__link">Про нас</a>
+        <a href="contacts.html" class="header__link header__link--active">Контакти</a>
+      </nav>
+      <!-- <div class="header__search-block">
+        <input id="searchInput" class="header__search" type="text" placeholder="Пошук..." />
+        <button class="header__btn" onclick="searchText()">🔍</button>
+      </div> -->
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="hero hero--small">
+      <div class="hero__content">
+        <h1 class="hero__title">Зв'яжіться з нами</h1>
+        <p class="hero__subtitle">Маєш питання або пропозицію? Ми завжди на зв'язку.</p>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div class="contact__container">
+        <form id="contactForm" class="contact__form" onsubmit="return validateForm()">
+          <label class="contact__label" for="name">Ім'я</label>
+          <input class="contact__input" id="name" name="name" type="text" placeholder="Ваше ім'я" required />
+
+          <label class="contact__label" for="email">Email</label>
+          <input class="contact__input" id="email" name="email" type="email" placeholder="name@example.com" required />
+
+          <label class="contact__label" for="message">Повідомлення</label>
+          <textarea class="contact__textarea" id="message" name="message" rows="6" placeholder="Опишіть ваше питання..." required></textarea>
+
+          <button class="contact__btn" type="submit">Відправити</button>
+        </form>
+
+        <p id="formMessage" class="contact__message"></p>
+
+        <div style="margin-top:18px;text-align:center;color:#555">
+          <p><strong>Адреса:</strong> вул. Подорожня, 10, Київ, Україна</p>
+          <p><strong>Пошта:</strong> info@travelmate.example</p>
+          <p><strong>Підтримка:</strong> 24/7</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+      <div
+        style="
+          max-width: 1100px;
+          margin: 0 auto;
+          padding: 20px 16px;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          gap: 24px;
+          color: #fff;
+        "
+      >
+        <!-- Блок 1: Навігація -->
+        <div style="flex: 1 1 200px">
+          <h4 style="margin-bottom: 8px; font-size: 1.05rem">Навігація</h4>
+          <ul style="list-style: none; padding: 0; margin: 0; line-height: 1.6">
+            <li>
+              <a href="index.html" style="color: #fff; text-decoration: none"
+                >Головна</a
+              >
+            </li>
+            <li>
+              <a
+                href="destinations.html"
+                style="color: #fff; text-decoration: none"
+                >Напрямки</a
+              >
+            </li>
+            <li>
+              <a href="about.html" style="color: #fff; text-decoration: none"
+                >Про нас</a
+              >
+            </li>
+            <li>
+              <a href="contacts.html" style="color: #fff; text-decoration: none"
+                >Контакти</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Блок 2: Контакти -->
+        <div style="flex: 1 1 200px">
+          <h4 style="margin-bottom: 8px; font-size: 1.05rem">Контакти</h4>
+          <p style="margin: 0; line-height: 1.6">
+            Email:
+            <a href="mailto:info@travelmate.example" style="color: #fff"
+              >info@travelmate.example</a
+            ><br />
+            Телефон: +38 (067) 123-57-46<br />
+            Адреса: вул. Подорожня, 10, Київ, Україна
+          </p>
+        </div>
+
+        <!-- Блок 4: Місія -->
+        <div style="flex: 1 1 300px">
+          <h4 style="margin-bottom: 8px; font-size: 1.05rem">Наша місія</h4>
+          <p style="margin: 0; line-height: 1.6">
+            TravelMate прагне зробити подорожі доступними, зручними та
+            натхненними. Ми допомагаємо планувати маршрути, бронювати тури та
+            відкривати нові горизонти.
+          </p>
+        </div>
+      </div>
+
+      <div
+        style="
+          text-align: center;
+          padding: 12px;
+          color: #ccc;
+          font-size: 0.9rem;
+          border-top: 1px solid rgba(255, 255, 255, 0.2);
+        "
+      >
+        © 2025 TravelMate. Всі права захищено.
+      </div>
+    </footer>
+</body>
+</html>
